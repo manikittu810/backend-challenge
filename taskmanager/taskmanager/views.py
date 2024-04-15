@@ -1,5 +1,6 @@
-from django.http import HttpResponse
-# Assuming 'home' is defined in 'taskmanager/views.py'
+from django.urls import path
+from .views import home  # Ensure this import matches the location of the home function.
 
-def home(request):
-    return HttpResponse("Welcome to the Task Manager API!")
+urlpatterns = [
+    path('', home, name='home'),
+]
